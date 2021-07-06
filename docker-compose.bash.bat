@@ -1,0 +1,1 @@
+docker exec -it strava-importer-1 /bin/bash

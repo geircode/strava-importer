@@ -1,6 +1,8 @@
-FROM node:alpine
+FROM node:16-buster
 
-COPY . /usr/src/app
+WORKDIR /app
+COPY . /app
 
-RUN cd /usr/src/app \
- && npm install
+RUN npm install
+
+ENTRYPOINT tail -f /dev/null

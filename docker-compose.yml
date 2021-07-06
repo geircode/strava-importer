@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  strava-importer:
+    image: geircode/strava-importer:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: strava-importer-1
+    environment:
+      - STRAVA_CLIENT_ID=${STRAVA_CLIENT_ID}
+      - STRAVA_CLIENT_SECRET=${STRAVA_CLIENT_SECRET}
+    networks:
+      - strava_importer_network
+networks:
+  strava_importer_network:
+    name: strava_importer_network
